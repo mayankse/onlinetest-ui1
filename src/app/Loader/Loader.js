@@ -1,5 +1,21 @@
 
-import React from 'react'
+import React from "react";
+import styles from "./Loader.module.css";
+export const Loader = () => {
+  return (
+    <>
+      <div className="mask"></div>
+      <img className={styles.loaderImg} src="loader.gif"></img>
+    </>
+  );
+};
+
+
+
+
+
+/*My Loader example*/
+/*import React from 'react'
 import styles from './Loader.module.css'
 
 export const Loader = () => {
@@ -12,4 +28,4 @@ export const Loader = () => {
     <img className={`${styles.loaderImg}`} src={`${randomElement}`}></img>
     </>
   )
-}
+}*/

@@ -9,7 +9,7 @@ let Modal = (props) => {
      <div className={`px-3 py-3 ${styles.modalContent}`}>
      <h5 className='text-center mb-5'>{text}</h5>
      <div className='text-center' >
-     {isShowOk &&  <Button onClick={fnOK} className="me-3" variant='contained'>OK</Button>}
+     {isShowOk &&  (<Button onClick={fnOK} className="me-3" variant='contained'>OK</Button>)}
       <Button onClick={fnClose} variant='contained'>CLOSE</Button>
      </div>
       </div>   

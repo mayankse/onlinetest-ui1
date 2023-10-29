@@ -64,8 +64,9 @@ const fnStartTimer=()=>
           }
       return val-1;
     });
-  },1000))
-}
+  },1000)
+  );
+};
  const  fnGetQuestions=async()=>
   {
     try {
@@ -84,10 +85,14 @@ const fnStartTimer=()=>
       setQuestions([]);
       dispatch({ type: "LOADER", payload: false });
     }
-  }
+  };
   
   useEffect(()=>{
     fnGetQuestions();
+     /*
+      Query logic
+      */
+    console.log('i fire once');
   },[])
   const fnClick=()=>
   {
@@ -132,19 +137,27 @@ const fnStartTimer=()=>
     
   }
   return (
-    <div>
+    <div className='mb-5'>
       {
       questions.map((obj,index)=>
       {
-        return <Question fnChange={fnChange} {...obj} key={"que_"+index} sno={index+1}/>
+        return (<Question fnChange={fnChange} 
+        {...obj} 
+        key={"que_"+index} 
+        sno={index+1}/>);
       })
       }
       {questions.length>0  && (
-      <>{isTestSubmitted ? <Button onClick={()=>window.location.reload()} variant='contained'>Write Again</Button>
-      :<Button onClick={fnClick} variant="contained">Submit</Button>}
+      <>{isTestSubmitted ? (<Button onClick={()=>window.location.reload()} variant='contained'>Write Again</Button>
+      ):(<Button onClick={fnClick} variant="contained">Submit</Button>)}
       </>)}
-     {isShowModal  && <Modal text={modalInfo.text} isShowOk={modalInfo.isShowOk} fnOK={fnOK} fnClose={fnClose}/>}
+     {isShowModal  && (
+      <Modal 
+      text={modalInfo.text} 
+      isShowOk={modalInfo.isShowOk} 
+      fnOK={fnOK} 
+      fnClose={fnClose}/>)}
      <h1 className={styles.timer}>{timeLeft}</h1>
     </div>
-  )
-}
+  );
+};

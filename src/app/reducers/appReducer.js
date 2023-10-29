@@ -1,4 +1,3 @@
-"use client"
 import { init } from "../utils/init"
 export const appReducer=(state=init,action)=>
 {
