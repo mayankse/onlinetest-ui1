@@ -15,7 +15,7 @@ export const Test = () => {
   const [isShowModal,setIsShowModal]=useState(false);
   const [modalInfo,setModalInfo]=useState({});
   const [isTestSubmitted,setIsTestSubmitted]=useState(false);
-  const [timeLeft,setTimeLeft]=useState(30);
+  const [timeLeft,setTimeLeft]=useState(60);
   const [interValId,setIntervalId]=useState();
   const dataRef=useRef({});
   const dispatch=useDispatch();
